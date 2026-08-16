@@ -40,14 +40,14 @@
 ## 安装
 
 ```bash
-# 从源码目录安装（当前推荐；npm 发布暂缓）
-dsh plugin --profile web add <本目录路径>
+# 从 npm 安装（推荐）
+dsh plugin --profile web add dsh-cost-estimate
 
-# npm 发布后将支持：
-# dsh plugin --profile web add dsh-cost-estimate
+# 本地开发 / 尝鲜（从源码目录安装）
+dsh plugin --profile web add <本目录路径>
 ```
 
-安装后重启 `dsh web`，并在浏览器中**强制刷新**（Ctrl+Shift+R）以加载新插件。桌面端用户后续可在插件市场搜索 `dsh-cost-estimate` 一键安装。
+安装后重启 `dsh web`，并在浏览器中**强制刷新**（Ctrl+Shift+R）以加载新插件。桌面端用户也可以在插件市场搜索 `dsh-cost-estimate` 一键安装。
 
 > 注意：DSH 的 `dsh plugin` 命令依赖 pnpm（`npm install -g pnpm`）；Windows 上安装路径含空格时请使用无空格的路径（如 junction）避免解析错误。
 
@@ -129,7 +129,7 @@ dsh plugin --profile web add <本目录路径>
 - [ ] 跨会话校准（本地持久化校准数据）
 - [ ] CLI / 无头模式支持
 - [ ] 模型 / 价格表的运行时配置界面
-- [ ] npm 发布
+- [x] npm 发布（dsh-cost-estimate@0.1.0）
 
 ---
 
