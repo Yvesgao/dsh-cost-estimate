@@ -17,6 +17,14 @@
   ],
   "license": "MIT",
   "author": "dsh-cost-estimate",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yvesgao/dsh-cost-estimate.git"
+  },
+  "homepage": "https://github.com/Yvesgao/dsh-cost-estimate#readme",
+  "bugs": {
+    "url": "https://github.com/Yvesgao/dsh-cost-estimate/issues"
+  },
   "keywords": [
     "dsh",
     "deepseek-harness",
