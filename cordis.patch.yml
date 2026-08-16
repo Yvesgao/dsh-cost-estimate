@@ -1,0 +1,23 @@
+# dsh-cost-estimate bundle patch: insert the estimator row into the profile.
+# The row is both a host entry (lib/index.js — a no-op host face) and a
+# browser-roster client module (lib/client.js via the dsh.client manifest).
+# The client face computes the pre-answer token/cost estimate from the session
+# event stream and renders an inline chat row that later flips to the actual
+# usage reported by the provider.
+- insert:
+    - id: cost-estimate
+      name: dsh-cost-estimate
+      config:
+        # Only show the estimate row when the estimated request input exceeds
+        # this many tokens ("big question" gate).
+        minInputTokens: 8000
+        # …or when the estimated cost ceiling is at least this many CNY.
+        minCostCny: 0.01
+        # Fallback model id used until the first provider-reported usage
+        # anchors the real model (accepts deepseek-v4-flash / deepseek-v4-pro).
+        defaultModel: deepseek-v4-flash
+        # Heuristic system-prompt + tool-schema tokens used until the first
+        # request usage lets the plugin derive the real header size.
+        headerTokensEstimate: 6000
+        # Assumed cache-hit ratio before the first usage sample arrives.
+        defaultCacheHitRatio: 0.5
