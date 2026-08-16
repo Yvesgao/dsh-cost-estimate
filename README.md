@@ -7,10 +7,14 @@ DSH (DeepSeek Harness) 插件：**在回答比较大的问题之前**，在 Web 
 ## 安装
 
 ```bash
+# 从 npm 安装（发布后）
+dsh plugin --profile web add dsh-cost-estimate
+
+# 本地开发 / 尝鲜（从源码目录安装）
 dsh plugin --profile web add <本目录路径>
 ```
 
-然后在插件配置里（可选）调整阈值；重启 `dsh web` 生效。
+然后在插件配置里（可选）调整阈值；重启 `dsh web` 生效。桌面端用户也可以在插件市场搜索 `dsh-cost-estimate` 一键安装。
 
 ## 行为
 
