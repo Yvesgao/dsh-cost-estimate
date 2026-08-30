@@ -130,10 +130,19 @@ dsh plugin --profile web add <本目录路径>
 
 - [x] 事前预估 + 事后对账（Web 聊天内嵌行）
 - [x] 峰谷计价、阈值触发、会话内输出校准
-- [ ] 跨会话校准（本地持久化校准数据）
-- [ ] CLI / 无头模式支持
+- [x] 跨会话校准（localStorage 持久化校准数据，v0.2.0）
+- [x] CLI / 无头模式支持（host 端 `agent/pre-step` 输出预估，v0.2.0）
 - [ ] 模型 / 价格表的运行时配置界面
-- [x] npm 发布（dsh-cost-estimate@0.1.0）
+- [x] npm 发布（dsh-cost-estimate@0.1.0 / 0.2.0）
+
+## 更新日志
+
+### v0.2.0（2026-08-26）
+
+- **跨会话校准**：实际 vs 预估的校准样本持久化到浏览器 localStorage（最多 100 条），新会话自动继承历史校准因子，越用越准
+- **CLI / 无头支持**：host 端新增真实行为——模型回答前，`agent/pre-step` 钩子通过 token-meter 服务计算输入 token，在 stdout 打印预估行（如 `[dsh-cost-estimate] 预估：输入约 302K tok · 输出 0.2K–0.9K tok · 费用约 ¥0.45–¥0.48（v4-flash）`），阈值与 Web 端一致
+- **共享估算核心**：估算逻辑抽为 `lib/estimate-core.js`（纯函数），host 端直接引用；CLI 会话内同样维护校准样本
+- 代码结构：新增 `lib/estimate-core.js`
 
 ---
 
