@@ -35,6 +35,10 @@
 实际：输入 9.1K tok · 输出 1.1K tok · 费用 ¥0.02（缓存命中 87% · v4-flash）
 ```
 
+## 演示
+
+![dsh-cost-estimate 演示](demo-cost-estimate.gif)
+
 ---
 
 ## 安装
