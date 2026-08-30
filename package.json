@@ -1,6 +1,6 @@
 {
   "name": "dsh-cost-estimate",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "DSH plugin: before answering a large question, show an estimate of tokens and DeepSeek API cost as an inline row in the Web chat stream, then update it with the actual usage after the answer.",
   "type": "module",
   "main": "lib/index.js",
